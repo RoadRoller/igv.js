@@ -12,7 +12,8 @@
   "scripts": {
     "build": "node scripts/updateVersion.js && node scripts/generateEmbedCss.js && npx rollup --config",
     "prepack": "npm run build",
-    "test": "mocha -u tdd -r esm"
+    "test": "mocha -u tdd -r esm",
+    "prepare": "npm run build"
   },
   "author": {
     "name": "Jim Robinson"
