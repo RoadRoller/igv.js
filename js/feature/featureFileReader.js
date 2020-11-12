@@ -105,7 +105,7 @@ class FeatureFileReader {
                 }
 
                 // Load the file header (not HTTP header) for an indexed file.
-                let maxSize = 1000;
+                let maxSize = "vcf" === this.config.format ? 65000 : 1000;
                 if ("vcf" === this.config.format && index instanceof TribbleIndex) {
                     maxSize = Object.values(index.chrIndex)
                         .flatMap(chr => chr.blocks)
